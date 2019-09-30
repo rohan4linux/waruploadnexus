@@ -23,6 +23,24 @@
         <artifactId>maven-war-plugin</artifactId>
         <version>3.0.0</version>
       </plugin>
+            <plugin>
+        <groupId>org.sonatype.plugins</groupId>
+        <artifactId>nxrm3-maven-plugin</artifactId>
+        <version>1.0</version>
+        <extensions>true</extensions>
+        <configuration>
+          <nexusUrl>http://54.85.253.60:8081</nexusUrl>
+          
+          <!-- The server "id" element from settings to use authentication from settings.xml-->
+          <serverId>local-nexus</serverId>
+         
+          <!-- Which repository to deploy to -->
+          <repository>maven-snapshots</repository>
+          
+          <!-- Skip the staging deploy mojo -->
+          <skipNexusStagingDeployMojo>true</skipNexusStagingDeployMojo>
+        </configuration>
+      </plugin>
     </plugins>
   </build>
   <dependencies>
